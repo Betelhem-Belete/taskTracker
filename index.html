@@ -18,6 +18,44 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <section class="main">
+      <div class="container">
+        <!--Task header-->
+        <div class="task-header">
+          <div class="top">
+            <div class="time">
+              <time class="current-date">10 jun, 2023</time>
+              <time class="current-time">11:00 PM</time>
+            </div>
+            <button class="clear">Clear Tasks</button>
+          </div>
+
+          <h1>Task Tracker</h1>
+          <p class="total-task">12 Tasks</p>
+          <div class="add-task">
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+        <!--Task Form-->
+        <div class="task-form">
+          <form action="">
+            <input type="date" id="task-date" />
+            <input type="date" id="task-text" placeholder="Add a task..." />
+            <button type="submit" id="task-btn">Add Task</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="task-section">
+      <div class="container">
+        <div class="task-list">
+          <div class="tasks"></div>
+        </div>
+      </div>
+    </section>
+
     <script src="script.js"></script>
   </body>
 </html>
