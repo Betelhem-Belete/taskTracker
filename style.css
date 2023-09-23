@@ -60,7 +60,8 @@ body {
 }
 
 .task-header,
-.task-form {
+.task-form,
+.task-list {
   width: 70%;
   margin: 0 auto;
   padding: 2rem 0;
@@ -174,7 +175,90 @@ form button:hover {
 
 @media screen and (max-width: 600px) {
   .task-header,
-  .task-form {
+  .task-form,
+  .task-list {
     width: 90%;
   }
+}
+
+/* Task List section*/
+.task-section {
+  width: 100%;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-left: 5px solid;
+  border-color: var(--color-sec);
+  border-radius: 0 3px 3px 0;
+  margin: 5px 0;
+}
+
+.task-date {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  background: var(--color-sec);
+  width: 7rem;
+  text-align: center;
+  color: var(--white);
+  border-radius: 3px;
+}
+
+.task-index {
+  font-size: 1.2rem;
+  background: var(--color-primary);
+  color: var(--white);
+  padding: 5px 1rem;
+  border-radius: 50%;
+}
+
+.task-text {
+  display: inline-block;
+}
+
+.text-icons {
+  font-size: 1.5rem;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.fa-check {
+  color: green;
+  position: relative;
+}
+.fa-edit {
+  color: var(--color-primary);
+  position: relative;
+}
+.fa-trash-alt {
+  color: red;
+  position: relative;
+}
+
+.fa-check:hover::after,
+.fa-edit:hover::after,
+.fa-trash-alt:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 300;
+  border-radius: 3px;
+  padding: 3px;
+}
+.fa-check:hover::after {
+  content: 'Completed';
+}
+.fa-edit:hover::after {
+  content: 'Edit';
+}
+.fa-trash-alt:hover::after {
+  content: 'Delete';
 }
