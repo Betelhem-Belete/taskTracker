@@ -41,10 +41,11 @@ body {
 
 .main {
   width: 100%;
-  background: url();
+  background: url(./images/laptop.jpg) center no-repeat;
   background-size: cover;
   color: var(--white);
   position: relative;
+  z-index: 0;
 }
 
 .main::before {
@@ -58,7 +59,122 @@ body {
   z-index: -1;
 }
 
-.task-header {
+.task-header,
+.task-form {
   width: 70%;
   margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+time {
+  display: block;
+}
+
+.current-date {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.current-time {
+  font-size: 1.6rem;
+}
+
+button.clear {
+  height: 3rem;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  background: red;
+  color: var(--white);
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.total-task {
+  font-size: 1.2rem;
+  background: var(--color-sec);
+  display: inline-block;
+  padding: 0 1rem;
+  border-radius: 3px;
+}
+
+.add-task .fas {
+  position: absolute;
+  right: 1rem;
+  bottom: 1.5rem;
+  font-size: 1.5rem;
+  background: green;
+  padding: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.1s;
+  z-index: 1111;
+}
+
+.add-task .fas:hover {
+  font-size: 1.7rem;
+}
+
+.add-task .fa-times {
+  background: red;
+  display: none;
+}
+
+.task-form {
+  position: absolute;
+  width: 40%;
+  top: -100%;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateX(-50%);
+}
+
+form {
+  width: 90%%;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+form > * {
+  display: block;
+  width: 50%;
+  font-size: 1.4rem;
+  margin: 0 auto;
+  padding: 5px;
+  margin-bottom: 3px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+}
+
+form input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+form button {
+  background: var(--color-sec);
+  border-color: var(--color-sec);
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+form button:hover {
+  background: orangered;
+}
+
+@media screen and (max-width: 600px) {
+  .task-header,
+  .task-form {
+    width: 90%;
+  }
 }
