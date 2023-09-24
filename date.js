@@ -30,3 +30,11 @@ const getDate = (today) => {
 };
 
 currentDate.innerHTML = getDate(date);
+
+//Display Time
+const displayTime = () => {
+  const date = new Date();
+  currentTime.innerHTML = date.toLocaleTimeString();
+};
+// displayTime();
+setInterval(displayTime, 1000);
