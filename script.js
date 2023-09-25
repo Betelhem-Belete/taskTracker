@@ -7,5 +7,6 @@ const addTaskDiv = document.querySelector('.add-task'),
 
 const taskDate = document.getElementById('task-date'),
   taskText = document.getElementById('task-text'),
-  addTaskBtn = document.getElementById('task-btn'),
-  clearBtn = document.getElementById('clear-btn');
+  addTaskBtn = document.getElementById('task-btn');
+
+const clearBtn = document.getElementById('clear-btn');
