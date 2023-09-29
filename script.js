@@ -38,3 +38,20 @@ function hideForm() {
   closeIcon.style.display = 'none';
   taskForm.reset();
 }
+
+//add event listener on task btn
+addTaskBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  //validate input
+  if (taskDate.value == '' || taskText.value == '') {
+    return alert('Please add task date and task');
+  }
+
+  let tasks = localStorage.grtItem('tasks');
+  if (tasks == null) {
+    tasksObj = [];
+  } else {
+    tasksObj = JSON.parse(tasks);
+  }
+});
