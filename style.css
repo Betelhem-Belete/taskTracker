@@ -138,6 +138,7 @@ h1 {
   left: 50%;
   background: rgba(0, 0, 0, 0.8);
   transform: translateX(-50%);
+  transition: all 0.3s;
 }
 
 form {
