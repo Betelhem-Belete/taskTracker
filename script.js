@@ -3,8 +3,8 @@ const addTaskDiv = document.querySelector('.add-task'),
   closeIcon = document.querySelector('.fa-times'),
   taskFormDiv = document.querySelector('.task-form'),
   taskForm = document.querySelector('form'),
-  tasksEl = document.querySelector('.tasks'),
-  totalTask = document.querySelector('.total-task');
+  tasksEl = document.querySelector('.tasks');
+ const totalTask = document.querySelector('.total-task');
 
 const taskDate = document.getElementById('task-date'),
   taskText = document.getElementById('task-text'),
