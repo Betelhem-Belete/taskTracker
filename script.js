@@ -24,7 +24,7 @@ function formDisplay(e) {
   }
 }
 
-// Show Form
+//Show Form
 function showForm() {
   taskFormDiv.style.top = '0';
   plusIcon.style.display = 'none';
@@ -39,6 +39,16 @@ function hideForm() {
   taskForm.reset();
 }
 
+//Get task from local storage
+function getTasks() {
+  let tasks = localStorage.getItem('tasks');
+  if (tasks == null) {
+    tasksObj = [];
+  } else {
+    tasksObj = JSON.parse(tasks);
+  }
+}
+
 //add event listener on task btn
 addTaskBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -47,11 +57,30 @@ addTaskBtn.addEventListener('click', (e) => {
   if (taskDate.value == '' || taskText.value == '') {
     return alert('Please add task date and task');
   }
+  //get tasks from local storage
+  getTasks();
 
-  let tasks = localStorage.grtItem('tasks');
-  if (tasks == null) {
-    tasksObj = [];
-  } else {
-    tasksObj = JSON.parse(tasks);
-  }
+  let myObj = {
+    date: taskDate.value,
+    text: taskText.value,
+    completed: false,
+  };
+
+  tasksObj.push(myObj);
+
+  // Save to the local storage
+  localStorage.setItem('tasks', JSON.stringify(tasksObj));
+
+  //show task on the page
+  showTasks();
+  hideForm();
 });
+
+//show task function
+function showTasks() {
+  getTasks();
+  if (tasksObj.length == 0) {
+    //if there is no task added in the page
+    tasksEl.innerHTML = '<p>No Task added. Please add a task.</>';
+  }
+}
