@@ -83,4 +83,37 @@ function showTasks() {
     //if there is no task added in the page
     tasksEl.innerHTML = '<p>No Task added. Please add a task.</>';
   }
+
+  console.log(tasksObj);
+  tasksObj.forEach(function (task, index) {
+    let taskItem = document.createElement('div');
+    let taskContent = document.createElement('div');
+    let taskIcons = document.createElement('div');
+
+    taskItem.classList.add('task');
+    taskContent.classList.add('task-content');
+    taskIcons.classList.add('task-icons');
+
+    taskContent.innerHTML = `
+      <p class="task-date">${task.date}</p>
+      <span class="task-index">${index + 1}</span>
+      <p class="task-text">${task.text}</p>
+      <p class="hidden">${task.completed}</p>  
+      `;
+    taskIcons.innerHTML = `
+      <i class="fas fa-check" id="${index}" 
+      onclick="completeTask(this.id)"></i>
+
+      <i class="fas fa-edit" id="${index}" 
+      onclick="editTask(this.id)"></i>
+
+      <i class="fas fa-trash-alt" id="${index}" 
+      onclick="deleteTask(this.id)"></i>
+      `;
+
+    taskItem.appendChild('taskContent');
+    taskItem.appendChild('taskContent');
+  });
 }
+
+showTasks();
