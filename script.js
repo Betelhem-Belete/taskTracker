@@ -118,6 +118,11 @@ function showTasks() {
       tasksEl.appendChild(taskItem);
     }
   });
+
+  //show total number of tasks
+  tasksObj.length > 1
+    ? (totalTask.innerHTML = `${tasksObj.length} Tasks`)
+    : (totalTask.innerHTML = `${tasksObj.length} Task`);
 }
 
 showTasks();
