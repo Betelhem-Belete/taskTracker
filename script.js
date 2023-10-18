@@ -78,6 +78,7 @@ addTaskBtn.addEventListener('click', (e) => {
 
 //show task function
 function showTasks() {
+  tasksEl.innerHTML = '';
   getTasks();
   if (tasksObj.length == 0) {
     //if there is no task added in the page
@@ -123,6 +124,17 @@ function showTasks() {
   tasksObj.length > 1
     ? (totalTask.innerHTML = `${tasksObj.length} Tasks`)
     : (totalTask.innerHTML = `${tasksObj.length} Task`);
+}
+
+//Delete a task
+function deleteTask(index) {
+  const confirmDelete = confirm('Delete this task?');
+  if (confirmDelete) {
+    getTasks();
+    tasksObj.splice(index, 1); // the first argument is the id the second one is the number of textes to delete
+    localStorage.setItem('tasks', JSON.stringify(tasksObj)); //save in the local storage
+    showTasks();
+  }
 }
 
 showTasks();
