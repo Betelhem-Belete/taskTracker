@@ -137,4 +137,13 @@ function deleteTask(index) {
   }
 }
 
+//delete all tasks
+clearBtn.addEventListener('click', () => {
+  const confirmDelete = confirm('Do you want to delete all tasks?');
+  if (confirmDelete) {
+    localStorage.clear();
+    showTasks();
+  }
+});
+
 showTasks();
