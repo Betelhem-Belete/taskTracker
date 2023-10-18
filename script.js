@@ -146,4 +146,22 @@ clearBtn.addEventListener('click', () => {
   }
 });
 
+//Edit a task
+function editTask(index) {
+  taskForm.reset();
+  showForm();
+
+  getTasks();
+  // console.log(tasksObj[index].text);
+  // console.log(tasksObj[index].date);
+
+  taskDate.value = tasksObj[index].date;
+  taskText.value = tasksObj[index].text;
+
+  taskText.focus();
+  tasksObj.splice(index, 1);
+  localStorage.setItem('tasks', JSON.stringify(tasksObj));
+  showTasks();
+}
+
 showTasks();
