@@ -117,6 +117,7 @@ function showTasks() {
 
     if (tasksObj.length != 0) {
       tasksEl.appendChild(taskItem);
+      console.log(tasksEl.childElementCount);
     }
   });
 
