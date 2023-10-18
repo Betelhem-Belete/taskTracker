@@ -117,7 +117,7 @@ function showTasks() {
 
     if (tasksObj.length != 0) {
       tasksEl.appendChild(taskItem);
-      console.log(tasksEl.)
+      console.log(tasksEl.childElementCount);
     }
   });
 
@@ -182,5 +182,3 @@ function completeTask(index) {
 }
 
 showTasks();
-
-getTasks();
