@@ -142,7 +142,7 @@ h1 {
 }
 
 form {
-  width: 90%%;
+  width: 90%;
   margin: 0 auto;
   padding: 5px 0;
 }
@@ -196,6 +196,29 @@ form button:hover {
   border-color: var(--color-sec);
   border-radius: 0 3px 3px 0;
   margin: 5px 0;
+}
+
+/* COMPLETED TASK*/
+.completed {
+  border-color: green;
+  position: relative;
+}
+
+.completed::after {
+  position: absolute;
+  content: 'Completed';
+  right: 1rem;
+  bottom: 1rem;
+  animation: slide-in 0.5s ease-in-out;
+}
+
+@keyframes slide-in {
+  0% {
+    right: 5rem;
+  }
+  0% {
+    right: 1rem;
+  }
 }
 
 .task-date {
