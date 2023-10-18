@@ -164,4 +164,20 @@ function editTask(index) {
   showTasks();
 }
 
+//Set task to completed
+function completeTask(index) {
+  tasksEl.addEventListener('click', (e) => {
+    if (e.target.classList.contains('fa-check')) {
+      getTasks();
+
+      console.log(tasksObj[index].text);
+      console.log(tasksObj[index].completed);
+
+      tasksObj[index].completed = true;
+      localStorage.setItem('tasks', JSON.stringify(tasksObj));
+      showTasks();
+    }
+  });
+}
+
 showTasks();
