@@ -111,8 +111,12 @@ function showTasks() {
       onclick="deleteTask(this.id)"></i>
       `;
 
-    taskItem.appendChild('taskContent');
-    taskItem.appendChild('taskContent');
+    taskItem.appendChild(taskContent);
+    taskItem.appendChild(taskIcons);
+
+    if (tasksObj.length != 0) {
+      tasksEl.appendChild(taskItem);
+    }
   });
 }
 
