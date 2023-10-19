@@ -117,7 +117,13 @@ function showTasks() {
 
     if (tasksObj.length != 0) {
       tasksEl.appendChild(taskItem);
-      console.log(tasksEl.childElementCount);
+      // console.log(tasksEl.childElementCount);
+      console.log(taskItem.firstChild.children[3].innerText);
+      const taskStatus = taskItem.firstChild.children[3].innerText;
+
+      if (taskStatus == 'true') {
+        taskItem.classList.add('completed');
+      }
     }
   });
 
