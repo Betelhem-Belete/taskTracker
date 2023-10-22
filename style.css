@@ -286,3 +286,103 @@ form button:hover {
 .fa-trash-alt:hover::after {
   content: 'Delete';
 }
+
+/* MODAL SECTION*/
+/* MODAL SECTION*/
+/* MODAL SECTION*/
+.confirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: open 0.2s forwards;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.close-modal {
+  /* display: none; */
+}
+
+.confirm-modal {
+  width: 100%;
+  max-width: 50rem;
+  background: var(--white);
+  font-size: 1.4rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(0.7);
+  animation: open-modal 0.2s forwards;
+  transition: all 0.2s;
+}
+
+@keyframes open-modal {
+  to {
+    transform: scale(1);
+  }
+}
+
+.header {
+  background: var(--color-dark-grey);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.close {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--white);
+  transition: all 0.2s;
+}
+.close:hover {
+  color: red;
+}
+
+.content {
+  padding: 2rem 1.5rem;
+  font-size: 1.6rem;
+}
+
+.buttons {
+  background: var(--color-grey);
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1.5rem;
+}
+
+.btn {
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--light-blue);
+  background: var(--white);
+  color: var(--light-blue);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-ok {
+  background: var(--light-blue);
+  color: var(--white);
+}
