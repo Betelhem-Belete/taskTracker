@@ -20,5 +20,20 @@ class ShowConfirm {
     content.textContent = this.content;
     btnOk.innerText = this.ok;
     btnCancel.innerText = this.cancel;
+
+    confirmEl.classList.remove('close-modal');
+
+    closeEl.addEventListener('click', this.closeModal);
+    cancelBtn.addEventListener('click', this.closeModal);
+
+    btnOk.addEventListener('click', () => {
+      callbackFn();
+      this.closeModal();
+    });
+  }
+
+  //Close Modal Method
+  closeModal() {
+    confirmEl.classList.add('close-modal');
   }
 }
