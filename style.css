@@ -314,13 +314,15 @@ form button:hover {
 }
 
 .close-modal {
-  /* display: none; */
+  display: none;
 }
 
 .confirm-modal {
   width: 100%;
   max-width: 50rem;
   background: var(--white);
+  border-radius: 3px;
+  overflow: hidden;
   font-size: 1.4rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transform: scale(0.7);
