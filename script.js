@@ -138,7 +138,7 @@ function deleteTask(index) {
   const confirmDelete = confirm('Delete this task?');
   if (confirmDelete) {
     getTasks();
-    tasksObj.splice(index, 1); // the first argument is the id the second one is the number of textes to delete
+    tasksObj.splice(index, 1); // the first argument is the id the second one is the number of texts to delete
     localStorage.setItem('tasks', JSON.stringify(tasksObj)); //save in the local storage
     showTasks();
   }
@@ -186,5 +186,4 @@ function completeTask(index) {
     }
   });
 }
-
 showTasks();
