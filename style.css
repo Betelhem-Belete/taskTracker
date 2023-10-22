@@ -216,7 +216,7 @@ form button:hover {
   0% {
     right: 5rem;
   }
-  0% {
+  100% {
     right: 1rem;
   }
 }
